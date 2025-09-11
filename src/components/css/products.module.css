@@ -1,0 +1,66 @@
+.productCard {
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.productCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.productImage {
+  transition: transform 0.3s;
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.05);
+}
+.productCard {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+}
+
+/* Overlay highlight */
+.productCard::before {
+  content: "";
+  position: absolute;
+  bottom: -100%; /* Ẩn bên dưới */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 123, 255, 0.1),
+    rgba(0, 123, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+  transition: all 0.6s ease;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+/* Khi hover thì trượt lên phủ card */
+.productCard:hover::before {
+  bottom: 0;
+}
+
+.cardBody {
+  position: relative;
+  z-index: 1; /* Text + button nằm trên overlay */
+}
+
+.viewDetailBtn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+  z-index: 2;
+  position: relative;
+}
+
+.productCard:hover .viewDetailBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
