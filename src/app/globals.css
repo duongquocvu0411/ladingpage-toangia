@@ -112,3 +112,169 @@ a {
   border-bottom: 2px solid #fff; 
   color: #fff;
 }
+
+
+
+/* chi tiết sản phẩm  */
+.product-card {
+  transition: all 0.4s ease;
+}
+
+/* Overlay chỉ body */
+.body-hover {
+  background: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-card:hover .body-hover {
+  background: rgba(40, 167, 69, 0.85);
+  color: white;
+}
+
+.product-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.product-card:hover .product-desc {
+  max-height: 80px;
+  opacity: 1;
+  margin-top: 5px;
+}
+
+.view-detail-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover .view-detail-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* zom ảnh và chi tiết ảnh trang detail */
+.main-image-wrapper {
+  cursor: zoom-in;
+}
+.main-product-image {
+  transition: transform 0.3s ease;
+}
+.main-image-wrapper:hover .main-product-image {
+  transform: scale(1.05);
+}
+.thumb-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.thumb-img:hover {
+  border-color: #28a745;
+  transform: scale(1.05);
+}
+.thumb-img.active {
+  border-color: #28a745;
+}
+
+ /* nút gọi ngay và zalo */
+ .circle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.circle-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.circle-btn-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.phone-btn {
+  background-color: #007bff;
+  animation: ring 1s infinite; /* rung liên tục */
+}
+
+.zalo-btn {
+  background-color: #00a8ff;
+  animation: pulse 1.5s infinite; /* scale liên tục */
+}
+
+/* Scale animation liên tục cho Zalo */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Hiệu ứng rung cho nút gọi */
+@keyframes ring {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+
+/* detail sản phẩm */
+.circle-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.circle-btn:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+.circle-btn-img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.product-detail p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.product-detail h2, .product-detail h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.product-detail ul {
+  padding-left: 1.5rem;
+}

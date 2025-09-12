@@ -62,9 +62,9 @@
                     <p className="mb-1">
                       <strong>Kích thước:</strong> {p.size}
                     </p>
-                    <div className="product-fill">
+                    <div className="product-material">
                       <p className="mb-0">
-                        <strong>Chất liệu:</strong> {p.fill}
+                        <strong>Chất liệu:</strong> {p.material}
                       </p>
                     </div>
 
