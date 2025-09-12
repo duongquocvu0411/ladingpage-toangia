@@ -10,7 +10,7 @@ export interface Product {
   seoContent: string;
   seoKeyword: string;
   seoDescription: string;
-  detail?: string; // HTML full detail từ CKEditor
+  detail?: string; 
 }
 
 export const products: Product[] = [

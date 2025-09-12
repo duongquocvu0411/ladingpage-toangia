@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://toangia.netlify.app/sitemap.xml
