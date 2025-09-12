@@ -1,42 +1,37 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { products, type Product } from "@/data/products";
+import { products } from "@/data/products";
 import { websiteConfig } from "@/data/websiteConfig";
 
-// SEO động
+export async function generateStaticParams() {
+  return products.map((p) => ({ slug: p.slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const product = products.find((p) => p.slug === params.slug);
-  if (!product) {
-    return {
-      title: "Sản phẩm không tồn tại",
-      description: "Sản phẩm không tìm thấy trong cửa hàng",
-    };
-  }
+  const { slug } = await params; 
+  const product = products.find((p) => p.slug === slug);
+  if (!product) return {};
 
   return {
     title: product.seoContent,
     description: product.seoDescription,
     keywords: product.seoKeyword,
-    icons: { icon: "/favicon.ico" },
+    icons: "/favicon.ico",
   };
 }
 
-// Build tĩnh cho tất cả slug
-export async function generateStaticParams(): Promise<{ params: { slug: string } }[]> {
-  return products.map((p) => ({ params: { slug: p.slug } }));
-}
-
-// Component chính
-export default function ProductDetail({
+export default async function ProductDetail({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const product = products.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
+
   if (!product) return notFound();
 
   const { phone, zalo } = websiteConfig;
