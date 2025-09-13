@@ -22,6 +22,11 @@ export async function generateMetadata({
     title: product.seoContent,
     description: product.seoDescription,
     keywords: product.seoKeyword,
+    robots: "index, follow",
+    alternates:{
+      canonical: `${websiteConfig.website}/products/${product.slug}`
+    }
+    
   
   };
 }

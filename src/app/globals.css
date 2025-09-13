@@ -191,48 +191,41 @@ a {
 }
 
  /* nút gọi ngay và zalo */
- .circle-btn {
+.circle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 60px;           /* kích thước nút */
+  height: 60px;
   border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;       /* bắt buộc để ảnh không tràn ra ngoài */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .circle-btn:hover {
-  transform: scale(1.15);
+  transform: scale(1.15) rotate(-5deg);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .circle-btn-img {
   width: 100%;
   height: 100%;
+  object-fit: cover;   /* phủ đầy nút */
   border-radius: 50%;
-  object-fit: cover;
 }
 
 .phone-btn {
   background-color: #007bff;
-  animation: ring 1s infinite; /* rung liên tục */
+  animation: ring 1s infinite;
 }
 
 .zalo-btn {
   background-color: #00a8ff;
-  animation: pulse 1.5s infinite; /* scale liên tục */
+  animation: pulse 1.5s infinite;
 }
 
-/* Scale animation liên tục cho Zalo */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* Hiệu ứng rung cho nút gọi */
+/* Animation rung cho phone */
 @keyframes ring {
   0% { transform: rotate(0deg); }
   10% { transform: rotate(15deg); }
@@ -243,6 +236,12 @@ a {
   100% { transform: rotate(0deg); }
 }
 
+/* Animation scale liên tục cho Zalo */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
 
 
 /* detail sản phẩm */

@@ -17,5 +17,5 @@ export const websiteConfig = {
 
   fanpage: "https://facebook.com/ket-sat-chinh-hang",
   email: "contact@ketsat.com",
-  website: "https://www.ketsat.com",
+  website: "https://toangia.netlify.app",
 };
